@@ -47,11 +47,13 @@ The app creates `resolveiq.db` locally and seeds fictional examples when the dat
 | `PATCH` | `/api/complaints/{id}` | Update complaint fields |
 | `DELETE` | `/api/complaints/{id}` | Delete a complaint record |
 
-## Deployment boundary
+## GitHub Pages demo
 
-GitHub stores and versions this source code. GitHub Pages can serve static files, but it cannot run this FastAPI backend. A live, connected demo needs a separate application host and a persistent database strategy.
+The `docs/` folder contains a standalone browser-only version of the dashboard. It stores fictional demo cases in the visitor's browser. The FastAPI API is not used by that Pages site, and demo edits do not sync between visitors.
 
-The current demo API has no authentication and permits public writes if exposed directly. Before connecting a public host, add an appropriate access control or read-only demo mode, move away from local SQLite for persistent multi-user use, configure secrets and HTTPS, and complete a security review. Never deploy real grievance records in this demo.
+The included GitHub Actions workflow publishes `docs/` to GitHub Pages when changes reach `main`. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**. GitHub Pages sites are publicly available on the internet, so the site clearly identifies itself as an independent concept demonstration and contains no real grievance records.
+
+GitHub Pages serves static files and cannot run the FastAPI backend. To host the connected API, use a separate application host and persistent database. The current FastAPI API has no authentication and permits public writes if exposed directly; do not expose it publicly until access controls or a read-only mode, persistent storage, secrets handling, HTTPS, and a security review are in place.
 
 ## SIH submission notes
 
