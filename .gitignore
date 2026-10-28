@@ -1,0 +1,28 @@
+# Local database and user data
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local authoring/build outputs and generated presentations
+.build/
+output/
+
+# ChatGPT-synced reference material is read-only and not part of the app repo
+sources/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
